@@ -5,7 +5,7 @@ import org.apache.dubbo.common.extension.Adaptive;
 import org.apache.dubbo.springboot.demo.consumer.spi.test.Car;
 
 /**
- * Created by luo.zhi.kun on 2022/11/14.
+ * Created by yiliou on 2022/11/14.
  */
 //@Adaptive
 public class RedCar implements Car {

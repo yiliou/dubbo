@@ -4,7 +4,7 @@ import org.apache.dubbo.common.extension.Adaptive;
 import org.apache.dubbo.springboot.demo.consumer.spi.test.Animal;
 
 /**
- * Created by luo.zhi.kun on 2023/3/22.
+ * Created by yiliou on 2023/3/22.
  * 如果接口和接口方法上没有@Adaptive
  * 想要获取getAdaptiveExtension扩展点
  * 需要在实现了上加@Adaptive

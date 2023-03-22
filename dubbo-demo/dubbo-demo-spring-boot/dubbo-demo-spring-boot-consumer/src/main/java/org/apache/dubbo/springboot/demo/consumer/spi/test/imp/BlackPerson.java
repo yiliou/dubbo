@@ -4,7 +4,7 @@ import org.apache.dubbo.springboot.demo.consumer.spi.test.Car;
 import org.apache.dubbo.springboot.demo.consumer.spi.test.Person;
 
 /**
- * Created by luo.zhi.kun on 2022/11/14.
+ * Created by yiliou on 2022/11/14.
  */
 public class BlackPerson implements Person {
 

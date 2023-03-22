@@ -5,7 +5,7 @@ import org.apache.dubbo.common.extension.ExtensionLoader;
 import org.apache.dubbo.rpc.model.ApplicationModel;
 
 /**
- * Created by luo.zhi.kun on 2022/11/14.
+ * Created by yiliou on 2022/11/14.
  */
 public class SpiTest {
 

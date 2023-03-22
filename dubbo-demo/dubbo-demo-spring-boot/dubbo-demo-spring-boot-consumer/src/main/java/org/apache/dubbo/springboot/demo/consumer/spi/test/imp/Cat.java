@@ -4,7 +4,7 @@ import org.apache.dubbo.common.extension.Adaptive;
 import org.apache.dubbo.springboot.demo.consumer.spi.test.Animal;
 
 /**
- * Created by luo.zhi.kun on 2023/3/22.
+ * Created by yiliou on 2023/3/22.
  */
 @Adaptive
 public class Cat implements Animal {
