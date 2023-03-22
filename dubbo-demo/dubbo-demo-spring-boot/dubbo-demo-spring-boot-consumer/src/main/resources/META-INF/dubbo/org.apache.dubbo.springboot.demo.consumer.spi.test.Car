@@ -1,0 +1,5 @@
+black=org.apache.dubbo.springboot.demo.consumer.spi.test.imp.BlackCar
+red=org.apache.dubbo.springboot.demo.consumer.spi.test.imp.RedCar
+adaptive=org.apache.dubbo.springboot.demo.consumer.spi.test.imp.AdaptiveCar
+warpper=org.apache.dubbo.springboot.demo.consumer.spi.test.imp.CarWarpper
+warpper2=org.apache.dubbo.springboot.demo.consumer.spi.test.imp.CarWarpper2

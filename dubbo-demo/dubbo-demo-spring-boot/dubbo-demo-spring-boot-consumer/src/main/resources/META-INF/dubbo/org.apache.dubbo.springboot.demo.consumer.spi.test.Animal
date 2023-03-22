@@ -1,0 +1,2 @@
+dog=org.apache.dubbo.springboot.demo.consumer.spi.test.imp.Dog
+cat=org.apache.dubbo.springboot.demo.consumer.spi.test.imp.Cat
