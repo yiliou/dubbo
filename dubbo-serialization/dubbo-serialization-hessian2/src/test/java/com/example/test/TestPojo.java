@@ -14,31 +14,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.example.test;
 
-package org.apache.dubbo.rpc.stub;
+import java.io.Serializable;
+import java.util.Objects;
 
-import org.apache.dubbo.common.stream.StreamObserver;
+public class TestPojo implements Serializable {
+    private final String data;
 
-import java.util.concurrent.CompletableFuture;
-import java.util.function.BiConsumer;
-
-public class UnaryStubMethodHandler<T, R> implements StubMethodHandler<T, R> {
-    private final BiConsumer<T, StreamObserver<R>> func;
-
-    public UnaryStubMethodHandler(BiConsumer<T, StreamObserver<R>> func) {
-        this.func = func;
+    public TestPojo(String data) {
+        this.data = data;
     }
 
     @Override
-    public CompletableFuture<R> invoke(Object[] arguments) {
-        T request = (T) arguments[0];
-        CompletableFuture<R> future = new CompletableFuture<>();
-        StreamObserver<R> responseObserver = new FutureToObserverAdaptor<>(future);
-        try {
-            func.accept(request, responseObserver);
-        } catch (Throwable e) {
-            future.completeExceptionally(e);
-        }
-        return future;
+    public String toString() {
+        throw new IllegalAccessError();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TestPojo testPojo = (TestPojo) o;
+        return Objects.equals(data, testPojo.data);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(data);
     }
 }

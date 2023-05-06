@@ -14,31 +14,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.apache.dubbo.common.serialize.hessian2;
 
-package org.apache.dubbo.rpc.stub;
+import java.io.Serializable;
+import java.util.Objects;
 
-import org.apache.dubbo.common.stream.StreamObserver;
+public class TrustedPojo implements Serializable {
 
-import java.util.concurrent.CompletableFuture;
-import java.util.function.BiConsumer;
+    private final double data;
 
-public class UnaryStubMethodHandler<T, R> implements StubMethodHandler<T, R> {
-    private final BiConsumer<T, StreamObserver<R>> func;
-
-    public UnaryStubMethodHandler(BiConsumer<T, StreamObserver<R>> func) {
-        this.func = func;
+    public TrustedPojo(double data) {
+        this.data = data;
     }
 
     @Override
-    public CompletableFuture<R> invoke(Object[] arguments) {
-        T request = (T) arguments[0];
-        CompletableFuture<R> future = new CompletableFuture<>();
-        StreamObserver<R> responseObserver = new FutureToObserverAdaptor<>(future);
-        try {
-            func.accept(request, responseObserver);
-        } catch (Throwable e) {
-            future.completeExceptionally(e);
-        }
-        return future;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TrustedPojo that = (TrustedPojo) o;
+        return Objects.equals(data, that.data);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(data);
     }
 }
